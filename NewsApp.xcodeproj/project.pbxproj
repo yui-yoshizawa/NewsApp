@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		33323AF6E85C7520FF295736 /* Pods_NewsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D01F81297C35FFA8DFF5CE3 /* Pods_NewsApp.framework */; };
+		BA17EF5322FFBF7000CA7854 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA21FC3C22FFBD5D006C3AD5 /* WebKit.framework */; };
 		BA21FC2922FF94A8006C3AD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA21FC2822FF94A8006C3AD5 /* AppDelegate.swift */; };
 		BA21FC2B22FF94A8006C3AD5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA21FC2A22FF94A8006C3AD5 /* MainViewController.swift */; };
 		BA21FC2E22FF94A8006C3AD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA21FC2C22FF94A8006C3AD5 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 		BA21FC3222FF94A8006C3AD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA21FC3422FF94A8006C3AD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA21FC3A22FFA973006C3AD5 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		BA21FC3C22FFBD5D006C3AD5 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA17EF5322FFBF7000CA7854 /* WebKit.framework in Frameworks */,
 				33323AF6E85C7520FF295736 /* Pods_NewsApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,6 +48,7 @@
 		0B17212D2BB3D21D9F3FC6B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA21FC3C22FFBD5D006C3AD5 /* WebKit.framework */,
 				9D01F81297C35FFA8DFF5CE3 /* Pods_NewsApp.framework */,
 			);
 			name = Frameworks;
