@@ -10,11 +10,10 @@ import UIKit
 import XLPagerTabStrip
 import WebKit
 
-class NewsViewController: UIViewController, IndicatorInfoProvider, UITableViewDelegate, UITableViewDataSource, WKNavigationDelegate, XMLParserDelegate {
+class NewsViewController: UIViewController, IndicatorInfoProvider, UITableViewDelegate, UITableViewDataSource, WKNavigationDelegate, XMLParserDelegate {    // どのプロトコルが何なのか
     
+    var refreshControl: UIRefreshControl!
     
-    
-    // どのプロトコルが何なのか
     
     // テーブルビューのインスタンス取得
     var tableView: UITableView = UITableView()
@@ -54,6 +53,11 @@ class NewsViewController: UIViewController, IndicatorInfoProvider, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // refreshControl のインスタンス
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        
+        
         // デリゲートとの接続
         tableView.delegate = self
         tableView.dataSource = self
@@ -68,12 +72,26 @@ class NewsViewController: UIViewController, IndicatorInfoProvider, UITableViewDe
         // tableViewをviewに追加
         self.view.addSubview(tableView)
         
+        // refreshControl をテーブルビューにつける
+        tableView.addSubview(refreshControl)
+        
         // 最初は隠す(tablrView が表示されるのを邪魔しないように)
         webview.isHidden = true
         toolbar.isHidden = true
         
         parseUrl()
     }
+    
+    @objc func refresh() {
+        // 2秒後にdelayを呼ぶ
+        perform(#selector(delay), with: nil, afterDelay: 2.0)
+    }
+    
+    @objc func delay() {
+        parseUrl()
+        refreshControl.endRefreshing()
+    }
+    
     
     func parseUrl() {
         // url型に変換
